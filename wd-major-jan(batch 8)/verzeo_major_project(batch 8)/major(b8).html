@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/@material-ui/styles/getStylesCreator">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+    <style>
+      .footer{
+        background-color:rgb(5, 112, 50);
+      }
+      body{
+       
+      }
+      #logo{font-family: 'Ranchers', cursive;
+      text-transform: uppercase;
+        background-color: floralwhite;
+        border-radius: 15px 2px 15px 2px;
+      }
+   
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark " style="background-color:rgb(5, 112, 50);"  >
+  <div class="container-fluid col-sm-8">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapsed navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item ">
+          <a class="nav-link active fa fa-home fa-lg" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link fa fa-info fa-lg" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle fa fa-list fa-lg" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+  <div class="col-sm-2"></div>
+  <div class="col-sm-2" id="logo"><i class="fa fa-user-secret fa-lg" aria-hidden="true"></i>shanmukh & team</div>
+</nav>
+<br>
+<div class="row ">
+    <div class='col-sm-4'>
+<table class="table table-striped" id="table"  >
+    <thead class="thead-dark">
+        <tr>
+            <th>SHARES</th>
+            <th>BUY</th>
+            <th>SELL</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>TATA</th>
+            <td><button type="button" class="btn btn-success">BUY</button></td>
+            <td><button type="button" class="btn btn-dark">SELL</button></td>
+            
+        </tr>
+        <tr>
+            <th>fox trade</th>
+            <td><button type="button" class="btn btn-success">BUY</button></td>
+            <td><button type="button" class="btn btn-dark">SELL</button></td>
+            
+        </tr>
+        <tr>
+            <th>SBI</th>
+            <td><button type="button" class="btn btn-success">BUY</button></td>
+            <td><button type="button" class="btn btn-dark">SELL</button></td>
+           
+        </tr>
+        <tr>
+            <th>BAJAJ</th>
+            <td><button type="button" class="btn btn-success">BUY</button></td>
+            <td><button type="button" class="btn btn-dark">SELL</button></td>
+            
+        </tr>
+        <tr>
+            <th>AIRTEL</th>
+            <td><button type="button" class="btn btn-success">BUY</button></td>
+            <td><button type="button" class="btn btn-dark">SELL</button></td>
+            
+        </tr>
+    </tbody>
+</table>
+</div>
+<div class="col-sm-8" id="myChart">
+  <script>
+    window.onload = function () {
+    
+    var chart = new CanvasJS.Chart("chartContainer", {
+      theme: "light2", 
+      animationEnabled: true,
+      zoomEnabled: true,
+      title: {
+        text: "buy and sell data"
+      },
+      data: [{
+        type: "area",
+        dataPoints: []
+      }]
+    });
+    
+    addDataPoints(1000);  
+    chart.render();
+    
+    function addDataPoints(noOfDps) {
+      var xVal = chart.options.data[0].dataPoints.length + 1, yVal = 100;
+      for(var i = 0; i < noOfDps; i++) {
+        yVal = yVal +  Math.round(5 + Math.random() *(-5-5));
+        chart.options.data[0].dataPoints.push({x: xVal,y: yVal});	
+        xVal++;
+      }
+    }
+    
+    }
+    </script>
+    </head>
+    <body>
+    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+</div>
+</div>
+</div>
+<hr>
+<hr>
+<hr>
+<hr>
+<footer class="footer">
+  <div class="container">
+      <div class="row">             
+          <div class="col-4 offset-1 col-sm-2">
+              <h5>Links</h5>
+              <ul class="list-unstyled">
+                  <li><i class="fa fa-home" aria-hidden="true"></i> home</li>
+                  <li> <i class="fa fa-user-circle" aria-hidden="true"></i> menu</li>
+                  <li><i class="fa fa-ship" aria-hidden="true"></i> about us</li>
+                  <li><i class="fa fa-mobile" aria-hidden="true"></i> Contact us</li>
+              </ul>
+          </div>
+          <div class="col-4 col-sm-5">
+              <h5>Our Address</h5>
+              <address>
+            123, abcd Road<br>
+            xyz Bay, dholakpur<br>
+            jupiter<br>
+            <i class="fa fa-phone fa-lg"></i>Tel.: +123 456 789<br>
+            Fax: +13 456 789<br>
+            Email: <a href="mailto:confusion@food.net">apna_team@abcd.net</a>
+         </address>
+          </div>
+          <div class="col-4 col-sm-4 align-self-center">
+              <div class="text-center">
+                  <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus fa-lg"></i></a>
+                  <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook fa-lg"></i></a>
+                  <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin fa-lg"></i></a>
+                  <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter fa-lg"></i></a>
+                  <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><i class="fa fa-youtube fa-lg"></i></a>
+                  <a class="btn btn-social-icon btn-envelope-o" href=""><i class="fa fa-envelope-o fa-lg"></i></a>
+              </div>
+          </div>
+     </div>
+     <div class="row justify-content-center">             
+          <div class="col-auto">
+              <p>© Copyright 2021 shanmukh and team</p>
+          </div>
+     </div>
+  </div>
+</footer>
+</body>
+</html>
